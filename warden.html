@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Happy Birthday Divya — Warden Madam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blush:#FBEAEE;--blush2:#F7DCE3;--cream:#FFF9F5;
+  --pink:#F3B4C3;--rose:#E58BA0;--deep:#A9536B;--ink:#5B3742;
+  --gold:#D9A441;--goldsoft:#F0D9A8;
+  --shadow:0 22px 56px rgba(169,83,107,.14);--r:26px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--blush:#FBEAEE;--cream:#FFF9F5;--ink:#5B3742}}
+:root[data-theme="dark"]{--blush:#FBEAEE;--cream:#FFF9F5;--ink:#5B3742}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--blush);color:var(--ink);font-family:'Quicksand',system-ui,sans-serif;font-size:17px;line-height:1.68;overflow-x:hidden;
+ background-image:radial-gradient(1100px 620px at 12% -8%,#FFF6F0 0%,transparent 62%),radial-gradient(900px 620px at 92% 8%,#F8DFE7 0%,transparent 60%),radial-gradient(800px 700px at 50% 100%,#FCEFE2 0%,transparent 65%);
+ background-attachment:fixed}
+h1,h2,h3{font-family:'Playfair Display',serif;font-weight:700;line-height:1.16}
+.script{font-family:'Parisienne',cursive;font-weight:400}
+.wrap{width:min(1120px,92vw);margin-inline:auto}
+section{padding:92px 0;position:relative}
+:focus-visible{outline:3px dashed var(--deep);outline-offset:4px;border-radius:10px}
+img{max-width:100%}
+
+#loader{position:fixed;inset:0;z-index:999;background:var(--cream);display:grid;place-items:center;text-align:center;transition:opacity .7s,visibility .7s}
+#loader.gone{opacity:0;visibility:hidden}
+.lbs{display:flex;gap:14px;justify-content:center;margin-bottom:20px}
+.lb{width:32px;height:42px;border-radius:50% 50% 47% 47%;animation:bob 1.3s ease-in-out infinite}
+.lb:nth-child(1){background:var(--pink)}.lb:nth-child(2){background:var(--goldsoft);animation-delay:.15s}
+.lb:nth-child(3){background:var(--rose);animation-delay:.3s}.lb:nth-child(4){background:#F6E2CE;animation-delay:.45s}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-15px) rotate(3deg)}}
+#loader p{font-family:'Parisienne',cursive;font-size:30px;color:var(--deep)}
+.lbar{width:190px;height:4px;border-radius:99px;background:#F0DCE1;margin:16px auto 0;overflow:hidden}
+.lbar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--rose),var(--gold));animation:fill 2s ease forwards}
+@keyframes fill{to{width:100%}}
+
+#sky{position:fixed;inset:0;pointer-events:none;z-index:0}
+.star{position:absolute;color:var(--gold);opacity:.5;animation:tw 3.4s ease-in-out infinite}
+@keyframes tw{0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:.85;transform:scale(1.15) rotate(22deg)}}
+.fb{position:fixed;bottom:-140px;z-index:0;pointer-events:none;opacity:.45}
+.spark{position:fixed;width:7px;height:7px;border-radius:50%;pointer-events:none;z-index:900;background:radial-gradient(circle,#fff,var(--gold));animation:so .8s ease-out forwards}
+@keyframes so{to{transform:translateY(-26px) scale(0);opacity:0}}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:800}
+
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(255,249,245,.74);border-bottom:1px solid rgba(217,164,65,.22)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 0}
+.brand{font-family:'Parisienne',cursive;font-size:26px;color:var(--deep);white-space:nowrap}
+.links{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+.links a{color:var(--ink);text-decoration:none;font-weight:600;font-size:14px;padding:8px 13px;border-radius:99px;transition:.25s}
+.links a:hover{background:var(--pink);color:#fff;transform:translateY(-2px)}
+
+.hero{padding:64px 0 96px;text-align:center}
+.hf{position:relative;border-radius:40px;padding:58px 22px 64px;background:radial-gradient(circle at 50% 0%,#fff 0%,var(--cream) 45%,var(--blush2) 100%);box-shadow:var(--shadow);border:1px solid rgba(217,164,65,.28);overflow:hidden}
+.hf::before,.hf::after{content:"";position:absolute;width:320px;height:320px;border-radius:50%;filter:blur(6px);opacity:.5}
+.hf::before{background:radial-gradient(circle,#F6C9D4,transparent 65%);top:-120px;left:-110px}
+.hf::after{background:radial-gradient(circle,#F3DCB2,transparent 65%);bottom:-140px;right:-120px}
+.eyebrow{font-size:13px;letter-spacing:.3em;color:var(--deep);opacity:.7;font-weight:600}
+.hero h1{font-size:clamp(62px,14vw,158px);color:var(--deep);margin:2px 0;position:relative;z-index:2}
+.hero h1 span{display:inline-block;opacity:0;transform:translateY(40px) rotate(-8deg);animation:li .8s cubic-bezier(.2,.9,.3,1.4) forwards}
+@keyframes li{to{opacity:1;transform:none}}
+.sub{font-size:18px;opacity:.86;position:relative;z-index:2;max-width:60ch;margin-inline:auto}
+.rule{width:150px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:20px auto}
+.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px;position:relative;z-index:2}
+.btn{border:0;cursor:pointer;font-family:inherit;font-weight:700;font-size:15px;padding:13px 26px;border-radius:99px;background:linear-gradient(135deg,var(--rose),#EFA9BB);color:#fff;box-shadow:0 12px 26px rgba(229,139,160,.4);transition:transform .22s,box-shadow .22s}
+.btn:hover{transform:translateY(-3px) scale(1.03)}
+.btn:active{transform:scale(.96)}
+.btn.ghost{background:transparent;color:var(--deep);border:1.6px solid var(--gold);box-shadow:none}
+.btn.ghost:hover{background:var(--goldsoft)}
+.btn.sm{padding:9px 18px;font-size:13.5px}
+.teddy{font-size:56px;display:inline-block;animation:sway 3.6s ease-in-out infinite;margin-top:22px}
+@keyframes sway{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg) translateY(-8px)}}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.3,1)}
+.rv.in{opacity:1;transform:none}
+.st{text-align:center;margin-bottom:10px}
+.st .script{display:block;font-size:clamp(36px,6vw,58px);color:var(--rose);line-height:1.05}
+.st h2{font-size:clamp(20px,3vw,26px);color:var(--deep);font-weight:500;font-style:italic}
+.note{text-align:center;max-width:58ch;margin:0 auto 44px;opacity:.82}
+
+/* memories */
+.prog{display:flex;align-items:center;gap:12px;justify-content:center;margin-bottom:34px;flex-wrap:wrap}
+.pdots{display:flex;gap:7px}
+.pd{width:13px;height:13px;border-radius:50%;background:#EFD9DF;border:1.5px solid rgba(217,164,65,.5);transition:.4s}
+.pd.on{background:linear-gradient(135deg,var(--rose),var(--gold));transform:scale(1.25)}
+.mlist{display:grid;gap:24px}
+.mem{border-radius:var(--r);border:1px solid rgba(217,164,65,.3);background:linear-gradient(160deg,#fff,var(--blush2));box-shadow:0 14px 38px rgba(169,83,107,.1);overflow:hidden}
+.mem.open{border-color:var(--rose)}
+.qhead{display:flex;gap:14px;align-items:flex-start;padding:26px 26px 6px}
+.qno{font-family:'Playfair Display',serif;font-size:30px;color:var(--gold);line-height:1;flex:0 0 auto;margin-top:2px}
+.qtext{font-family:'Playfair Display',serif;font-size:clamp(19px,2.6vw,23px);color:var(--deep)}
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:11px;padding:16px 26px 8px}
+.opt{cursor:pointer;font-family:inherit;font-size:15px;font-weight:600;text-align:left;padding:13px 18px;border-radius:16px;border:1.5px solid rgba(217,164,65,.42);background:rgba(255,255,255,.8);color:var(--ink);transition:.2s}
+.opt:hover{border-color:var(--rose);transform:translateY(-2px)}
+.opt.bad{background:#F6D7DE;border-color:var(--rose);animation:shake .45s}
+.opt.good{background:linear-gradient(135deg,var(--rose),#EFA9BB);border-color:var(--rose);color:#fff}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-9px)}40%{transform:translateX(8px)}60%{transform:translateX(-5px)}80%{transform:translateX(4px)}}
+.wrongline{padding:6px 26px 22px;color:var(--deep);font-family:'Parisienne',cursive;font-size:24px;min-height:20px}
+.reveal{max-height:0;overflow:hidden;transition:max-height .9s cubic-bezier(.2,.8,.3,1)}
+.reveal .inner{padding:8px 26px 30px}
+.rtag{display:inline-block;font-size:12.5px;letter-spacing:.16em;color:var(--deep);background:var(--goldsoft);padding:5px 14px;border-radius:99px;font-weight:700;margin-bottom:12px}
+.reveal h3{color:var(--deep);font-size:23px;margin-bottom:10px;font-style:italic;font-weight:500}
+.reveal p{margin-bottom:12px;max-width:72ch}
+.reveal p:last-child{margin-bottom:0}
+.sign{font-family:'Parisienne',cursive;font-size:24px;color:var(--rose)}
+.locked{padding:0 26px 22px;font-size:14px;opacity:.6;font-style:italic}
+
+/* gallery */
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px}
+.frame{position:relative;aspect-ratio:3/4;border-radius:110px 110px 22px 22px;overflow:hidden;background:linear-gradient(160deg,#fff,var(--blush2));border:2px solid rgba(217,164,65,.4);display:grid;place-items:center;text-align:center;padding:14px;cursor:pointer;transition:transform .4s,box-shadow .4s}
+.frame:nth-child(even){border-radius:22px 22px 110px 110px}
+.frame:hover{transform:translateY(-8px) rotate(-1.5deg);box-shadow:0 22px 46px rgba(169,83,107,.22)}
+.frame img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.frame .cap{position:absolute;left:0;right:0;bottom:0;padding:9px;font-size:12.5px;font-weight:600;color:#fff;background:linear-gradient(0deg,rgba(90,55,66,.72),transparent);z-index:2;opacity:0;transition:.3s}
+.frame:hover .cap{opacity:1}
+.frame .ph{font-size:13.5px;opacity:.7;z-index:1}
+.frame input{display:none}
+
+/* song */
+.shell{background:linear-gradient(150deg,#fff,var(--blush2));border-radius:34px;padding:32px;border:1px solid rgba(217,164,65,.3);box-shadow:var(--shadow)}
+.viz{display:flex;align-items:flex-end;gap:5px;height:80px;justify-content:center;margin-bottom:16px}
+.viz i{width:7px;border-radius:99px;background:linear-gradient(180deg,var(--gold),var(--rose));height:8px;transition:height .11s linear}
+.lyrics{text-align:center;min-height:126px;display:grid;place-content:center;gap:4px}
+.ly{font-size:18px;opacity:.28;font-weight:600;transition:.35s}
+.ly.on{opacity:1;color:var(--deep);font-size:26px;font-family:'Playfair Display',serif;font-style:italic}
+.ctrl{display:flex;gap:11px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:16px}
+
+/* messages */
+.mform{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:28px}
+input[type=text],textarea{font-family:inherit;font-size:15.5px;padding:13px 18px;border-radius:99px;border:1.5px solid rgba(217,164,65,.45);background:rgba(255,255,255,.88);color:var(--ink);outline:none}
+input[type=text]:focus,textarea:focus{border-color:var(--rose)}
+textarea{border-radius:22px;resize:vertical;min-height:54px;flex:1 1 360px}
+.queue{max-width:760px;margin-inline:auto;display:grid;gap:14px}
+.msg{background:rgba(255,255,255,.85);border:1px solid rgba(217,164,65,.25);border-left:4px solid var(--rose);border-radius:18px;padding:15px 18px;box-shadow:0 10px 26px rgba(169,83,107,.08);animation:popin .5s cubic-bezier(.2,.9,.3,1.3)}
+@keyframes popin{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+.msg .top{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
+.msg .topL{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.msg b{color:var(--deep);font-size:15px}
+.msg time{font-size:12.5px;opacity:.62;font-weight:600}
+.msg p{font-size:15.5px;opacity:.92;margin-top:4px;white-space:pre-wrap}
+.msg .delBtn{background:none;border:0;cursor:pointer;color:var(--deep);opacity:.4;font-size:15px;line-height:1;padding:2px 4px;border-radius:8px;transition:.2s}
+.msg .delBtn:hover{opacity:1;background:var(--goldsoft)}
+.empty{text-align:center;opacity:.6;font-style:italic}
+
+footer{padding:76px 0 56px;text-align:center}
+footer .big{font-family:'Parisienne',cursive;font-size:clamp(42px,9vw,88px);color:var(--deep);line-height:1.05}
+footer small{display:block;margin-top:14px;opacity:.7}
+.toTop{position:fixed;right:18px;bottom:18px;z-index:60;width:46px;height:46px;border-radius:50%;border:0;cursor:pointer;background:var(--deep);color:#fff;font-size:19px;opacity:0;transform:translateY(20px);transition:.3s;box-shadow:0 10px 24px rgba(169,83,107,.4)}
+.toTop.on{opacity:1;transform:none}
+@media (max-width:640px){
+  section{padding:66px 0}.links a{padding:7px 9px;font-size:12.5px}
+  .hf{padding:42px 14px 50px}.qhead,.opts,.wrongline,.reveal .inner,.locked{padding-left:18px;padding-right:18px}
+}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div id="loader"><div>
+  <div class="lbs"><i class="lb"></i><i class="lb"></i><i class="lb"></i><i class="lb"></i></div>
+  <p>Divya Warden madam</p>
+  <div class="lbar"><i></i></div>
+</div></div>
+
+<div id="sky"></div>
+<canvas id="confetti"></canvas>
+
+<header><nav class="wrap">
+  <div class="brand">Divya</div>
+  <div class="links">
+    <a href="#memories">Memories</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#song">Song</a>
+    <a href="#messages">Message</a>
+  </div>
+</nav></header>
+
+<main>
+<section class="hero wrap" id="top">
+  <div class="hf">
+    <p class="eyebrow">S E P T E M B E R &nbsp;&nbsp; W A R D E N &nbsp;&nbsp; D A Y</p>
+    <h1 class="script" id="nameAnim">Divya</h1>
+    <p class="sub">My supporter, my caretaker, and the one person who knows me the most after my boyfriend.</p>
+    <div class="rule"></div>
+    <p class="sub" style="font-style:italic">Happy birthday, warden. 🎂</p>
+    <div class="cta">
+      <button class="btn" id="goMem">Unlock our memories</button>
+      <button class="btn ghost" id="goSong">Play your song</button>
+      <button class="btn ghost" id="pop1">Confetti podu</button>
+    </div>
+    <div class="teddy">🧸</div>
+  </div>
+</section>
+
+<section id="memories">
+  <div class="wrap">
+    <div class="st rv"><span class="script">Six Memories, Six Locks</span><h2>correct answer sonna dhaan memories open aagum</h2></div>
+    <p class="note rv">Ellame namma kadha dhaan. Ni dhaan anga irundhathu, so answers theriyum. Thappa pottaa… setha</p>
+    <div class="prog rv">
+      <div class="pdots" id="pdots"></div>
+      <span style="font-weight:700;color:var(--deep)"><span id="unlocked">0</span> / 6 unlocked</span>
+      <button class="btn ghost sm" id="resetQ">Reset all</button>
+    </div>
+    <div class="mlist" id="mlist"></div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="st rv"><span class="script">Namma Album</span><h2>book exhibition to Munnar, ellame inga</h2></div>
+    <p class="note rv">namma ella pjotos uuh vaika laan edam erukaathu inga so romba memorable aana phots mattum thn erukum. ethayum thedaaatha</p>
+    <div class="gal" id="galGrid"></div>
+  </div>
+</section>
+
+<section id="song">
+  <div class="wrap">
+    <div class="st rv"><span class="script">Divuku Divuku Divya</span><h2>music &amp; lyrics: enn composition, victim: neenga</h2></div>
+    <p class="note rv">Recent days aah onna irritate panna vachurka tool aahvae na ithn vachurken so ithu namma song athunala play panni kelu... Eeeee</p>
+    <div class="shell rv">
+      <div class="viz" id="viz"></div>
+      <div class="lyrics" id="lyrics"></div>
+      <div class="ctrl">
+        <button class="btn" id="playBtn">Play the song</button>
+        <button class="btn ghost" id="tempoBtn">Speed: normal</button>
+        <label class="btn ghost" style="display:inline-block">Upload our song<input type="file" id="audioFile" accept="audio/*" hidden></label>
+      </div>
+      <audio id="myAudio" controls style="width:100%;margin-top:18px;display:none"></audio>
+    </div>
+  </div>
+</section>
+
+<section id="messages">
+  <div class="wrap">
+    <div class="st rv"><span class="script">Warden's Reply Box</span><h2>divya, ithula type pannu</h2></div>
+    <p class="note rv">Ellam date and time-oda inga queue aagum. Enna thittanumnaalum thittiko, memorable aah vachupom.</p>
+    <div class="mform rv">
+      <input type="text" id="mName" placeholder="Name" maxlength="28" value="Divya">
+      <textarea id="mText" placeholder="Type pannunga warden madam…" maxlength="500"></textarea>
+      <button class="btn" id="mAdd">Send</button>
+    </div>
+    <div class="queue" id="queue"></div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <p class="big">Happy Birthday Warden</p>
+  <p class="sub" style="margin-top:14px">Ithae maadhiri innum naraya years, naraya cities suthanum, naraya fun pannanum. Thanks for never judging me, warden. 💛</p>
+  <button class="btn" id="pop2" style="margin-top:20px">Innum konjam confetti</button>
+  <small>divuku divuku divya… once again happy birthday.</small>
+</div></footer>
+<button class="toTop" id="toTop" aria-label="Back to top">↑</button>
+
+<script>
+(function(){"use strict";
+var RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v);}catch(e){return null;}}
+
+/* loader */
+addEventListener('load',function(){setTimeout(function(){var l=document.getElementById('loader');l.classList.add('gone');setTimeout(function(){l.remove();},800);burst(150);},RM?150:2000);});
+
+/* name letters */
+(function(){var h=document.getElementById('nameAnim'),t=h.textContent.trim();h.textContent='';
+ t.split('').forEach(function(c,i){var s=document.createElement('span');s.textContent=c;s.style.animationDelay=(RM?0:(2.1+i*.09))+'s';h.appendChild(s);});})();
+
+/* sky */
+(function(){var sky=document.getElementById('sky');
+ for(var i=0;i<32;i++){var s=document.createElement('div');s.className='star';s.textContent='✦';
+  s.style.left=(Math.random()*100)+'%';s.style.top=(Math.random()*100)+'%';s.style.fontSize=(8+Math.random()*15)+'px';
+  s.style.animationDelay=(Math.random()*3.4)+'s';sky.appendChild(s);}
+ if(RM)return;var c=['#F3B4C3','#F0D9A8','#E58BA0','#F6E2CE','#EFC9D6'];
+ setInterval(function(){var b=document.createElement('div');b.className='fb';var w=24+Math.random()*24;
+  b.style.cssText+='left:'+(Math.random()*95)+'vw;width:'+w+'px;height:'+(w*1.28)+'px;border-radius:50% 50% 46% 46%;background:'+c[(Math.random()*5)|0];
+  document.body.appendChild(b);var d=11000+Math.random()*9000;
+  b.animate([{transform:'translateY(0)'},{transform:'translateY(-118vh) rotate(8deg)'}],{duration:d,easing:'linear'});
+  setTimeout(function(){b.remove();},d);},1700);})();
+
+/* sparkle */
+if(!RM){var lastM=0;addEventListener('pointermove',function(e){var n=Date.now();if(n-lastM<70)return;lastM=n;
+ var s=document.createElement('div');s.className='spark';s.style.left=(e.clientX-3)+'px';s.style.top=(e.clientY-3)+'px';
+ document.body.appendChild(s);setTimeout(function(){s.remove();},800);});}
+
+/* confetti */
+var cv=document.getElementById('confetti'),ctx=cv.getContext('2d'),bits=[];
+function size(){cv.width=innerWidth;cv.height=innerHeight;}size();addEventListener('resize',size);
+function burst(n){if(RM)return;var c=['#E58BA0','#F3B4C3','#D9A441','#F0D9A8','#FFF','#F6C9D4'];
+ for(var i=0;i<n;i++)bits.push({x:innerWidth/2+(Math.random()-.5)*innerWidth*.7,y:innerHeight*.35,vx:(Math.random()-.5)*9,vy:-Math.random()*13-3,s:5+Math.random()*7,r:Math.random()*6,vr:(Math.random()-.5)*.35,c:c[(Math.random()*6)|0],l:1});
+ if(!burst.run){burst.run=true;tick();}}
+function tick(){ctx.clearRect(0,0,cv.width,cv.height);
+ for(var i=bits.length-1;i>=0;i--){var b=bits[i];b.vy+=.32;b.x+=b.vx;b.y+=b.vy;b.r+=b.vr;b.l-=.006;
+  ctx.save();ctx.globalAlpha=Math.max(b.l,0);ctx.translate(b.x,b.y);ctx.rotate(b.r);ctx.fillStyle=b.c;ctx.fillRect(-b.s/2,-b.s/2,b.s,b.s*.62);ctx.restore();
+  if(b.y>cv.height+40||b.l<=0)bits.splice(i,1);}
+ if(bits.length)requestAnimationFrame(tick);else{burst.run=false;ctx.clearRect(0,0,cv.width,cv.height);}}
+document.getElementById('pop1').onclick=function(){burst(200);};
+document.getElementById('pop2').onclick=function(){burst(260);};
+document.getElementById('goMem').onclick=function(){document.getElementById('memories').scrollIntoView();};
+document.getElementById('goSong').onclick=function(){document.getElementById('song').scrollIntoView();setTimeout(function(){if(!playing)togglePlay();},700);};
+
+/* reveal */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15});
+function watch(){document.querySelectorAll('.rv:not(.in)').forEach(function(e){io.observe(e);});}
+
+var tt=document.getElementById('toTop');
+addEventListener('scroll',function(){tt.classList.toggle('on',scrollY>700);});
+tt.onclick=function(){scrollTo({top:0,behavior:RM?'auto':'smooth'});};
+
+/* ================= MEMORIES ================= */
+var WRONG='divuku divuku divya…. olunga yosiiiiii😡';
+var DATA=[
+{q:'Namma 1st travel pannathu enga?',o:['Hosur','Book exhibition','Tirunelveli','Chennai'],a:1,
+ tag:'THE BEGINNING',t:'Antha book exhibition seat',
+ p:['Namma college-la book exhibition kootitu ponaanga. Antha time-la Dharanya-vum Malini-yum romba close, so rendu perum ore seat-la okkandutaanga. Naan thaniya okkandhu irundhen.',
+    'Appo nee vandhu en pakathula okaantha, edho periya decision maadhiri illaama, simple-a en kooda okkandha. Adhukku appuram namma selfy laan anga dhaan eduthom.',
+    'Ippa yosichaa, namma friendship exactly anga dhaan start aaachu. Oru seat, one beautiful friendship. Namma friendship-la antha book exhibition seat dhaan namma first memory.']},
+{q:'Onna naa epdi kupduven?',o:['Warden','Lusu','Divya','Kelavi'],a:0,
+ tag:'HOW YOU GOT THE NAME',t:'IV trip-la piranda "Warden"',
+ p:['IV trip-la nee correct time-ku thoongi elunthirchu, engalaiyum eluppi viduva. Actual-a veetla nee dhaan thoongu moonji — onna eluppa oru aal venumnu nee-yé solluva!',
+    'Aana anga, "naanga responsible-a enthirchu ready aaga maattom"nu theriñja udane, nee correct-a alarm vachu enthirchu, engalaiyum time-ku ready aaga vachurva.',
+    'Adhukkaaha thn onakku naan "Warden"nu peru vachen. chinna vishyam aah erukkalaam, aana adhukku pinnaadi irukkarathu — nee engala paathukkara care dhaan.']},
+{q:'Enga ni8ty poda sonnom onna?',o:['Chennai','IV','Hosur','Munnar'],a:2,
+ tag:'HOSUR',t:'Hosur, Bangalore naatkal, and antha nighty',
+ p:['Namma Hosur senthu ponom — anga kedacha memories ellame gold maani(eppa yoschaalum hype kudukuthu). Namakku "Bangalore naatkal" maadhiri oru feel kedachuchu.',
+    'Irundhaalum… nighty potrukkalaam warden. idha naanga vaazhnaal muzhukka sollittae irupom(ni ni8ty podala nu), adhula compromise illa. 😄',
+    'Aana serious-a sollanumna — enakku enna problem vanthaalum, nee en side ninnurukka. na ketrukavae maaten, direct-a vandhu ninnurva. Romba thanks, warden.']},
+{q:'Namma pona movie name enna?',o:['Youth','Joe','Toxic','Don'],a:0,
+ tag:'CHENNAI',t:'Chennai, namma BFs, and Youth',
+ p:['Chennai trip namma BF-s kooda — adhu really really memorable. Kaviya, Suba avagala vida naama 4 perum dhaan close-a irundhom.',
+    'Anga enna enna atrocities pannom(main aah UNO cards)! Couple-a-vum, friends-a-vum, rendu maadhiriyum semma fun. Movie Youth paathom, suthunom, sirichom — evergreen memory-la adhu top-la irukku.',
+    'Ithé maadhiri innum naraya cities suthanum. Kalyanathukku appuram-um, adhu change aagakoodaadhu.']},
+{q:'Namma pona 2nd couples trip?',o:['Chennai','Munnar','Ooty','Bangalore'],a:1,
+ tag:'MUNNAR',t:'Munnar — and the secret you still keep',
+ p:['Munnar trip semma fun-filled happiness. Namma nervous-a pesikittae Kaviya v2-ku bus-la ponom. Bus-la namma bag-a kalata solli thittulaam vaangunom — antha talk ellam innum nalla nyabagam irukku.',
+    'Adhukku appuram… naan kuduchathum onakku dhaan theriyum. Adha ippa varaikkum nee yaar kitteyum sollala. Fun-a kooda sollala. Adhu than periya visayam.',
+    'Athu mattum illa — nee enna judge panna-vé illa. Antha oru விஷயம் podhum, nee epd patta friend nu solla. Romba thanks, warden.']},
+{q:'Naa onaku compose panna paatu enna?',o:['Ooh Divya','Loosu pennae','Natpae Thunai','Divuku divuku divya…'],a:3,
+ tag:'THE SONG',t:'Divuku divuku Divya… (en composition)',
+ p:['Namma senthu pesura gossips-a vida, onna irritate panni velayaadrathu dhaan enakku romba pudikkum. Main-a antha Divya song. Eee…',
+    'Starting-la enakku onna pathi theriyaathu. "Iva en character-ku set aaga maata, indha maadhiri fun-a jolly-a oru friendship enakku kedaikkaadhu"nu nenachen.',
+    'Aana seriously — nee apdi illa warden. Avlo fun-filled person. Naan avlo panniyum, nee enna oru naalum judge pannala, enna pathi pinnaadi pesala. Adhukku romba romba thanks.',
+    'Ithé maadhiri namma innum naraya years ipdiyé irukkanum. Adhu dhaan en aasai. — Happy birthday, warden madam.']}
+];
+
+var ml=document.getElementById('mlist'),pd=document.getElementById('pdots');
+var saved={};try{saved=JSON.parse(ls('divya_unlocked')||'{}');}catch(e){saved={};}
+DATA.forEach(function(d,i){
+  var dot=document.createElement('div');dot.className='pd';dot.id='pd'+i;pd.appendChild(dot);
+  var el=document.createElement('article');el.className='mem rv';
+  var opts=d.o.map(function(o,k){return '<button class="opt" data-k="'+k+'">'+String.fromCharCode(97+k)+'. '+o+'</button>';}).join('');
+  el.innerHTML='<div class="qhead"><div class="qno">'+(i+1)+'</div><div class="qtext">'+d.q+'</div></div>'+
+   '<div class="opts">'+opts+'</div><div class="wrongline" id="wl'+i+'"></div>'+
+   '<div class="reveal" id="rv'+i+'"><div class="inner"><span class="rtag">'+d.tag+'</span><h3>'+d.t+'</h3>'+
+   d.p.map(function(p){return '<p>'+p+'</p>';}).join('')+'<p class="sign">— un friend, forever teasing you 💛</p></div></div>';
+  ml.appendChild(el);
+  var rev=el.querySelector('#rv'+i),wl=el.querySelector('#wl'+i);
+  function open(anim){
+    el.classList.add('open');dot.classList.add('on');
+    el.querySelectorAll('.opt').forEach(function(b){b.disabled=true;if(+b.dataset.k===d.a)b.classList.add('good');});
+    rev.style.maxHeight=rev.scrollHeight+40+'px';
+    wl.textContent='Correct! Memory unlock aaidhuchu 🎉';
+    if(anim){burst(110);}
+    count();
+    setTimeout(function(){rev.style.maxHeight='none';},1000);
+  }
+  el.addEventListener('click',function(e){
+    var b=e.target.closest('.opt');if(!b||b.disabled)return;
+    if(+b.dataset.k===d.a){saved[i]=1;try{ls('divya_unlocked',JSON.stringify(saved));}catch(err){}open(true);}
+    else{b.classList.remove('bad');void b.offsetWidth;b.classList.add('bad');wl.textContent=WRONG;
+      setTimeout(function(){b.classList.remove('bad');},600);}
+  });
+  if(saved[i])setTimeout(function(){open(false);},400);
+});
+function count(){var n=Object.keys(saved).length;document.getElementById('unlocked').textContent=n;
+ if(n===6&&!count.done){count.done=true;setTimeout(function(){burst(300);},600);}}
+count();
+document.getElementById('resetQ').onclick=function(){try{localStorage.removeItem('divya_unlocked');}catch(e){}location.reload();};
+
+/* ================= GALLERY (shared across every visitor) ================= */
+var CAPS=['Book exhibition','IV trip','Hosur days','Chennai with BFs','Munnar bus','Warden madam','Namma gang','Evergreen'];
+var gg=document.getElementById('galGrid');
+function hasStorage(){return (typeof window!=='undefined')&&window.storage&&typeof window.storage.get==='function';}
+// window.storage can take a moment to become available after the page loads.
+// Wait (up to ~4s) instead of giving up on the first check, so saved photos/messages aren't missed.
+var storageReady=new Promise(function(resolve){
+  var tries=0;
+  (function poll(){
+    if(hasStorage()){resolve(true);return;}
+    tries++;
+    if(tries>80){resolve(false);return;}
+    setTimeout(poll,50);
+  })();
+});
+CAPS.forEach(function(c,i){
+  var f=document.createElement('label');f.className='frame';f.tabIndex=0;
+  f.innerHTML='<span class="ph">'+c+'<br><small>tap to add photo</small></span><span class="cap">'+c+'</span><input type="file" accept="image/*">';
+  var key='gallery-photo-'+i;
+
+  function showPhoto(url){
+    var shown=f.querySelector('img');if(shown)shown.remove();
+    var out=new Image();out.alt=c;out.src=url;f.insertBefore(out,f.firstChild);
+  }
+
+  // default placeholder image (assets/1.jpg etc) if no one has uploaded one yet
+  var img=new Image();img.alt=c;
+  img.onload=function(){ if(!f.querySelector('img'))f.insertBefore(img,f.firstChild); };
+  img.onerror=function(){};
+  img.src='assets/'+(i+1)+'.jpg';
+
+  // load the shared photo (same one every visitor sees) if one has been uploaded before
+  (async function(){
+    await storageReady;
+    if(!hasStorage())return;
+    try{
+      var res=await window.storage.get(key,true);
+      if(res&&res.value)showPhoto(res.value);
+    }catch(e){ /* nobody has uploaded a photo for this slot yet */ }
+  })();
+
+  var inp=f.querySelector('input');
+  inp.onchange=function(){
+    var file=inp.files&&inp.files[0];if(!file)return;
+    var fr=new FileReader();
+    fr.onload=function(){
+      var im=new Image();
+      im.onload=function(){
+        var cn=document.createElement('canvas'),sc=Math.min(1,680/Math.max(im.width,im.height));
+        cn.width=im.width*sc;cn.height=im.height*sc;
+        cn.getContext('2d').drawImage(im,0,0,cn.width,cn.height);
+        var url=cn.toDataURL('image/jpeg',.72);
+        showPhoto(url);
+        (async function(){
+          await storageReady;
+          if(!hasStorage())return;
+          try{ await window.storage.set(key,url,true); }catch(e){}
+        })();
+      };
+      im.src=fr.result;
+    };
+    fr.readAsDataURL(file);
+  };
+  f.onkeydown=function(e){if(e.key==='Enter')inp.click();};
+  gg.appendChild(f);
+});
+
+/* ================= SONG ================= */
+var LYRICS=['Divuku divuku Divya…','warden madam vandhaachu','eniyan anna lyf fullaah hpyaachu','athunaala ellaarum jly aachu!',
+ 'Divuku divuku Divya…','inniki rule-u illa','thittum adiyum illavae illa',
+ 'Happy birthday Divya!','nighty joke-u marakkala','Hosur, Chennai, Munnar','memories-u kuraiyala',
+ 'Divuku divuku, divuku divuku','Divya, Divya, Divya!','warden madam oru loosu thn','en best supporter ava dhaan!'];
+var lyBox=document.getElementById('lyrics');
+function showLy(i){lyBox.innerHTML='';for(var k=i-1;k<=i+1;k++){if(k<0||k>=LYRICS.length)continue;
+ var p=document.createElement('div');p.className='ly'+(k===i?' on':'');p.textContent=LYRICS[k];lyBox.appendChild(p);} }
+showLy(0);
+var viz=document.getElementById('viz');for(var v=0;v<32;v++)viz.appendChild(document.createElement('i'));
+var bars=viz.querySelectorAll('i');
+var AC=null,playing=false,timer=null,step=0,nextT=0,tempo=1,lyIdx=-1,BPM=104;
+function sd(){return 60/(BPM*tempo)/4;}
+function note(t_,f,t,dur,g_,det){var o=AC.createOscillator(),g=AC.createGain();o.type=t_;o.frequency.setValueAtTime(f,t);if(det)o.detune.value=det;
+ g.gain.setValueAtTime(.0001,t);g.gain.exponentialRampToValueAtTime(g_,t+.012);g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+ o.connect(g);g.connect(AC.destination);o.start(t);o.stop(t+dur+.05);}
+function kick(t){var o=AC.createOscillator(),g=AC.createGain();o.frequency.setValueAtTime(150,t);o.frequency.exponentialRampToValueAtTime(48,t+.13);
+ g.gain.setValueAtTime(.7,t);g.gain.exponentialRampToValueAtTime(.001,t+.2);o.connect(g);g.connect(AC.destination);o.start(t);o.stop(t+.25);}
+var nb=null;
+function noise(t,dur,gain,hp){if(!nb){nb=AC.createBuffer(1,AC.sampleRate*.4,AC.sampleRate);var d=nb.getChannelData(0);for(var i=0;i<d.length;i++)d[i]=Math.random()*2-1;}
+ var s=AC.createBufferSource();s.buffer=nb;var f=AC.createBiquadFilter();f.type='highpass';f.frequency.value=hp||6000;
+ var g=AC.createGain();g.gain.setValueAtTime(gain,t);g.gain.exponentialRampToValueAtTime(.001,t+dur);
+ s.connect(f);f.connect(g);g.connect(AC.destination);s.start(t);s.stop(t+dur);}
+var SC=[261.63,293.66,329.63,392,440,523.25,587.33,659.25];
+var MEL=[5,5,4,3,4,null,3,null,2,2,3,4,3,null,null,null,5,5,6,7,6,null,5,null,4,4,3,2,3,null,null,null];
+var BASS=[0,null,null,null,3,null,null,null,4,null,null,null,3,null,null,null];
+function sched(){
+ while(nextT<AC.currentTime+.12){
+  var s=step%16,bar=Math.floor(step/16);
+  if(s%4===0)kick(nextT);
+  if(s%2===1)noise(nextT,.045,.12,7000);
+  if(s===4||s===12)noise(nextT,.14,.28,2200);
+  var bi=BASS[s];if(bi!=null)note('triangle',SC[bi]/2,nextT,sd()*3.2,.32);
+  var mi=MEL[(bar%2)*16+s];if(mi!=null){note('square',SC[mi],nextT,sd()*2,.12);note('sine',SC[mi]*2,nextT,sd()*1.6,.06,6);}
+  if(s===0){lyIdx=(lyIdx+1)%LYRICS.length;(function(k,when){setTimeout(function(){if(playing)showLy(k);},Math.max(0,(when-AC.currentTime)*1000));})(lyIdx,nextT);}
+  (function(st,when){setTimeout(function(){if(!playing)return;
+    for(var i=0;i<bars.length;i++){var b=(st%4===0)?1:.45;bars[i].style.height=(8+Math.random()*62*b*(1-Math.abs(i-16)/26))+'px';}
+   },Math.max(0,(when-AC.currentTime)*1000));})(s,nextT);
+  nextT+=sd();step++;
+ }
+}
+function togglePlay(){
+ if(!playing){if(!AC)AC=new (window.AudioContext||window.webkitAudioContext)();if(AC.state==='suspended')AC.resume();
+  playing=true;nextT=AC.currentTime+.06;step=0;lyIdx=-1;timer=setInterval(sched,25);
+  document.getElementById('playBtn').textContent='Pause the song';}
+ else{playing=false;clearInterval(timer);bars.forEach(function(b){b.style.height='8px';});
+  document.getElementById('playBtn').textContent='Play the song';}
+}
+document.getElementById('playBtn').onclick=togglePlay;
+var TS=[[1,'normal'],[1.3,'fast'],[1.7,'hostel run'],[.8,'sleepy']],ti=0;
+document.getElementById('tempoBtn').onclick=function(){ti=(ti+1)%TS.length;tempo=TS[ti][0];this.textContent='Speed: '+TS[ti][1];};
+document.getElementById('audioFile').onchange=function(){
+ var f=this.files&&this.files[0];if(!f)return;
+ var a=document.getElementById('myAudio');a.src=URL.createObjectURL(f);a.style.display='block';
+ if(playing)togglePlay();a.play();
+};
+
+/* ================= MESSAGES (shared across every visitor) ================= */
+var q=document.getElementById('queue');
+var MSG_KEY='birthday-messages';
+function fmt(ts){var d=new Date(ts);
+ var M=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+ var h=d.getHours(),ap=h>=12?'PM':'AM';h=h%12||12;
+ var m=d.getMinutes();m=m<10?'0'+m:m;
+ return d.getDate()+' '+M[d.getMonth()]+' '+d.getFullYear()+' · '+h+':'+m+' '+ap;}
+
+async function getMsgs(){
+ await storageReady;
+ if(hasStorage()){
+   try{var res=await window.storage.get(MSG_KEY,true);return res&&res.value?JSON.parse(res.value):[];}catch(e){return [];}
+ }
+ try{return JSON.parse(ls('divya_msgs')||'[]');}catch(e){return [];}
+}
+async function saveMsgs(arr){
+ await storageReady;
+ if(hasStorage()){try{await window.storage.set(MSG_KEY,JSON.stringify(arr),true);}catch(e){}}
+ else{try{ls('divya_msgs',JSON.stringify(arr));}catch(e){}}
+}
+function render(arr){
+ q.innerHTML='';
+ if(!arr.length){q.innerHTML='<p class="empty">Innum oru message-um illa. Warden madam, neenga dhaan first.</p>';return;}
+ arr.slice().reverse().forEach(function(w){
+  var d=document.createElement('div');d.className='msg';
+  d.innerHTML='<div class="top"><div class="topL"><b></b><time></time></div><button class="delBtn" type="button" aria-label="Delete message">✕</button></div><p></p>';
+  d.querySelector('b').textContent=w.n;d.querySelector('time').textContent=fmt(w.ts);d.querySelector('p').textContent=w.t;
+  d.querySelector('.delBtn').onclick=function(){deleteMsg(w.ts);};
+  q.appendChild(d);});
+}
+async function load(){render(await getMsgs());}
+async function deleteMsg(ts){
+ var arr=await getMsgs();
+ arr=arr.filter(function(m){return m.ts!==ts;});
+ await saveMsgs(arr);
+ load();
+}
+document.getElementById('mAdd').onclick=async function(){
+ var n=document.getElementById('mName').value.trim()||'Divya';
+ var t=document.getElementById('mText').value.trim();
+ if(!t){document.getElementById('mText').focus();return;}
+ var arr=await getMsgs();
+ arr.push({n:n,t:t,ts:Date.now()});
+ await saveMsgs(arr);
+ document.getElementById('mText').value='';load();burst(80);
+};
+load();
+watch();
+})();
+</script>
+</body>
+</html>
